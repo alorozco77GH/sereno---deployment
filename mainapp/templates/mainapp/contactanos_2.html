@@ -1,0 +1,210 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contáctanos</title>
+    <link rel="stylesheet" href="{% static 'mainapp/css/style.css' %}">
+    <style>
+        .cta-section {
+            background-color: #f0f0f0;
+            padding: 6rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        .cta-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .cta-title {
+            font-size: 2.2rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+        .cta-subtitle {
+            font-size: 1.5rem;
+            color: #555;
+            margin-bottom: 2.5rem;
+        }
+        .btn-comienza {
+            display: inline-block;
+            padding: 1.2rem 2.5rem;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .btn-comienza:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+        }
+        .btn-submit {
+            background-color: #007bff;
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .btn-submit:hover {
+            background-color: #0056b3;
+        }
+        .alert {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+        }
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .alert-error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .error-message {
+            color: #dc3545;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+        @media (max-width: 768px) {
+            .cta-title {
+                font-size: 1.8rem;
+            }
+            .cta-subtitle {
+                font-size: 1.3rem;
+            }
+            .contact-form {
+                margin: 1rem;
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="{% static 'mainapp/images/logo.png' %}" alt="Logo de la empresa">
+        </div>
+        <nav>
+            <a href="{% url 'mainapp:inicio' %}">Inicio</a>
+            <a href="{% url 'mainapp:nosotros' %}">Nosotros</a>
+            <a href="{% url 'mainapp:servicios' %}">Servicios</a>
+            <a href="{% url 'mainapp:equipo' %}">Equipo</a>
+            <a href="{% url 'mainapp:contactanos' %}">Contáctanos</a>
+            <a href="{% url 'mainapp:contactanos_2' %}">Contáctanos_2</a>
+            <a href="{% url 'mainapp:enlaces' %}">Enlaces</a>
+        </nav>
+    </header>
+     <div class="container">
+        <main>
+            <h1>Contáctanos</h1>
+            
+            <!-- Messages -->
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h2>Envíanos un mensaje</h2>
+                <form method="post">
+                    {% csrf_token %}
+                    
+                    <div class="form-group">
+                        <label for="{{ form.name.id_for_label }}">Nombre:</label>
+                        {{ form.name }}
+                        {% if form.name.errors %}
+                            <div class="error-message">{{ form.name.errors.0 }}</div>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="{{ form.email.id_for_label }}">Email:</label>
+                        {{ form.email }}
+                        {% if form.email.errors %}
+                            <div class="error-message">{{ form.email.errors.0 }}</div>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="{{ form.message.id_for_label }}">Mensaje:</label>
+                        {{ form.message }}
+                        {% if form.message.errors %}
+                            <div class="error-message">{{ form.message.errors.0 }}</div>
+                        {% endif %}
+                    </div>
+                    
+                    <button type="submit" class="btn-submit">Enviar Mensaje</button>
+                </form>
+            </div>
+            
+            <section>
+                <h2>Otros medios de contacto</h2>
+                <p>También puedes contactarnos a través de los siguientes medios:</p>
+                <ul>
+                    <li>📧 Correo: info@ejemplo.com</li>
+                    <li>📞 Teléfono: (123) 456-7890</li>
+                    <li>📍 Dirección: Calle Principal 123</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Horario de Atención</h2>
+                <p>Lunes a Viernes: 9:00 AM - 6:00 PM</p>
+                <p>Sábados: 9:00 AM - 1:00 PM</p>
+            </section>
+            
+        </main>
+  
+    </div>
+
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2 class="cta-title">Tu compañía está a un paso de convertir la serenidad estratégica en la base de su crecimiento rentable a largo plazo.</h2>
+            <p class="cta-subtitle">Déjanos contarte nuestro método</p>
+            <a href="{% url 'mainapp:contactanos' %}" class="btn-comienza">Comienza ahora</a>
+        </div>
+    </section>
+</body>
+</html> 

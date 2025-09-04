@@ -1,0 +1,171 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enlaces - Instagram</title>
+    <link rel="stylesheet" href="{% static 'mainapp/css/style.css' %}">
+    <style>
+        .enlaces-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .enlaces-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .enlace-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .enlace-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        .enlace-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .enlace-content {
+            padding: 1.5rem;
+        }
+        .enlace-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .enlace-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        .enlace-link {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .enlace-link:hover {
+            background-color: #0056b3;
+        }
+        .instagram-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+        }
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .page-title {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+        }
+        @media (max-width: 768px) {
+            .enlaces-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .page-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="{% static 'mainapp/images/logo.png' %}" alt="Logo de la empresa">
+        </div>
+        <nav>
+            <a href="{% url 'mainapp:inicio' %}">Inicio</a>
+            <a href="{% url 'mainapp:nosotros' %}">Nosotros</a>
+            <a href="{% url 'mainapp:servicios' %}">Servicios</a>
+            <a href="{% url 'mainapp:equipo' %}">Equipo</a>
+            <a href="{% url 'mainapp:contactanos' %}">Contáctanos</a>
+            <a href="{% url 'mainapp:contactanos_2' %}">Contáctanos_2</a>
+            <a href="{% url 'mainapp:enlaces' %}">Enlaces</a>
+        </nav>
+    </header>
+
+    <div class="enlaces-container">
+        <div class="page-header">
+            <h1 class="page-title">Enlaces de Instagram</h1>
+            <p class="page-subtitle">Descubre nuestro contenido en redes sociales</p>
+        </div>
+
+        <div class="enlaces-grid">
+            <!-- Enlace 1 -->
+            <div class="enlace-card">
+                <img src="https://placehold.co/400x250/007bff/ffffff?text=Instagram+Post+1" alt="Instagram Post 1" class="enlace-image">
+                <div class="enlace-content">
+                    <h3 class="enlace-title">Estrategias Empresariales</h3>
+                    <p class="enlace-description">Descubre cómo implementar estrategias efectivas para el crecimiento de tu empresa con nuestro enfoque sereno y sostenible.</p>
+                    <a href="#" class="enlace-link">
+                        <svg class="instagram-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                        Ver en Instagram
+                    </a>
+                </div>
+            </div>
+
+            <!-- Enlace 2 -->
+            <div class="enlace-card">
+                <img src="https://placehold.co/400x250/28a745/ffffff?text=Instagram+Post+2" alt="Instagram Post 2" class="enlace-image">
+                <div class="enlace-content">
+                    <h3 class="enlace-title">Bienestar Organizacional</h3>
+                    <p class="enlace-description">Aprende cómo crear un ambiente de trabajo sereno y productivo que impulse la innovación y el éxito de tu equipo.</p>
+                    <a href="#" class="enlace-link">
+                        <svg class="instagram-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                        Ver en Instagram
+                    </a>
+                </div>
+            </div>
+
+            <!-- Enlace 3 -->
+            <div class="enlace-card">
+                <img src="https://placehold.co/400x250/dc3545/ffffff?text=Instagram+Post+3" alt="Instagram Post 3" class="enlace-image">
+                <div class="enlace-content">
+                    <h3 class="enlace-title">Crecimiento Sostenible</h3>
+                    <p class="enlace-description">Descubre cómo lograr un crecimiento empresarial sostenible y rentable a largo plazo con nuestras metodologías probadas.</p>
+                    <a href="#" class="enlace-link">
+                        <svg class="instagram-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                        Ver en Instagram
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2 class="cta-title">Tu compañía está a un paso de convertir la serenidad estratégica en la base de su crecimiento rentable a largo plazo.</h2>
+            <p class="cta-subtitle">Déjanos contarte nuestro método</p>
+            <a href="{% url 'mainapp:contactanos' %}" class="btn-comienza">Comienza ahora</a>
+        </div>
+    </section>
+</body>
+</html> 

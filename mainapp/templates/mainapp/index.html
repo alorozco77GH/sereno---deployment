@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="./style2.css" >
+
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="./logo.png" alt="Logo de la empresa">
+        </div>
+        <nav>
+            <a href="./index.html">Inicio</a>
+            <a href="./nosotros.html">Nosotros</a>
+            <a href="./servicios.html">Servicios</a>
+            <a href="./equipo.html">Equipo</a>
+            <a href="./contactanos.html">Contáctanos</a>
+            <a href="./contactanos_2.html">Contáctanos_2</a>
+            <a href="./enlaces.html">Enlaces</a>
+        </nav>
+    </header>
+
+    <section>
+        <div>
+            <h1 class="section-div__h1">Serenar es crecer:
+                Estrategias empresariales
+                desde la calma y la claridad
+            </h1>
+            <p>
+                <p class="section-div__p">Transformamos organizaciones a través de la serenidad como principio de desarrollo.</p>
+                 <a href="{% url 'mainapp:servicios' %}" class="btn-conoce-mas">Conoce más</a>
+            </p>
+        </div>
+    </section>
+
+    <section >
+        <h2 >CREEMOS EN QUE</h2>
+        <p >Las organizaciones serenas son las que vencen la ansiedad competitiva, se diferencian y se vuelven inimitables en sus mercados.</p>
+    </section>
+
+    <section>
+        <div>
+            <div >
+                <h2>Quiénes somos:</h2>
+                <p >En un entorno global caracterizado por la volatilidad y la incertidumbre, Sereno Consulting Group emerge como una firma de consultoría innovadora que está redefiniendo el éxito empresarial y el bienestar organizacional a través de un enfoque revolucionario: la serenidad como base de la consolidación de la ventaja competitiva.</p>
+                <a href="{% url 'mainapp:nosotros' %}" class="btn-conoce-mas">Conoce más</a>
+            </div>
+            <div>
+                <img src="https://placehold.co/600x400" alt="Imagen representativa de Sereno Consulting">
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div>
+            <div>
+                <img src="https://placehold.co/600x400" alt="Equipo de Sereno Consulting">
+            </div>
+            <div>
+                <h2 >Nuestro equipo:</h2>
+                <p>Formados en prestigiosas instituciones y con experiencia en transformación organizacional, nuestro equipo lidera con el ejemplo, combinando profesionalismo, innovación y compromiso con resultados medibles.</p>
+                <a>Conoce más</a>
+            </div>
+        </div>
+    </section>
+
+    <div>
+        <main>
+        </main>
+    </div>
+
+    <section >
+        <div >
+            <h2 >Tu compañía está a un paso de convertir la serenidad estratégica en la base de su crecimiento rentable a largo plazo.</h2>
+            <p>Déjanos contarte nuestro método</p>
+            <a href="{% url 'mainapp:contactanos' %}" class="btn-comienza">Comienza ahora</a>
+        </div>
+    </section>
+</body>
+</html> 

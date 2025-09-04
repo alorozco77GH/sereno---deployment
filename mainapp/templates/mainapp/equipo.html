@@ -1,0 +1,142 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipo</title>
+    <link rel="stylesheet" href="{% static 'mainapp/css/style.css' %}">
+    <style>
+        .cta-section {
+            background-color: #f0f0f0;
+            padding: 6rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        .cta-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .cta-title {
+            font-size: 2.2rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+        .cta-subtitle {
+            font-size: 1.5rem;
+            color: #555;
+            margin-bottom: 2.5rem;
+        }
+        .btn-comienza {
+            display: inline-block;
+            padding: 1.2rem 2.5rem;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .btn-comienza:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+        @media (max-width: 768px) {
+            .cta-title {
+                font-size: 1.8rem;
+            }
+            .cta-subtitle {
+                font-size: 1.3rem;
+            }
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+        .team-member {
+            text-align: center;
+            background-color: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+        .team-member img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            border: 4px solid #f8f9fa;
+        }
+        .team-member h2 {
+            color: #333;
+            font-size: 1.8rem;
+            margin: 0 0 0.5rem 0;
+        }
+        .team-member p {
+            color: #666;
+            font-size: 1.2rem;
+            margin: 0;
+        }
+        @media (max-width: 768px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="{% static 'mainapp/images/logo.png' %}" alt="Logo de la empresa">
+        </div>
+        <nav>
+            <a href="{% url 'mainapp:inicio' %}">Inicio</a>
+            <a href="{% url 'mainapp:nosotros' %}">Nosotros</a>
+            <a href="{% url 'mainapp:servicios' %}">Servicios</a>
+            <a href="{% url 'mainapp:equipo' %}">Equipo</a>
+            <a href="{% url 'mainapp:contactanos' %}">Contáctanos</a>
+            <a href="{% url 'mainapp:contactanos_2' %}">Contáctanos_2</a>
+            <a href="{% url 'mainapp:enlaces' %}">Enlaces</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main>
+            <h1>Nuestro Equipo</h1>
+            <section>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="https://placehold.co/250x250" alt="Foto de María González">
+                        <h2>Diego Romero</h2>
+                        <p>CEO</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://placehold.co/250x250" alt="Foto de Carlos Rodríguez">
+                        <h2>Mateo Araujo</h2>
+                        <p>CFO</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2 class="cta-title">Tu compañía está a un paso de convertir la serenidad estratégica en la base de su crecimiento rentable a largo plazo.</h2>
+            <p class="cta-subtitle">Déjanos contarte nuestro método</p>
+            <a href="{% url 'mainapp:contactanos' %}" class="btn-comienza">Comienza ahora</a>
+        </div>
+    </section>
+</body>
+</html> 

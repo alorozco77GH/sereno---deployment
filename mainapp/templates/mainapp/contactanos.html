@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contáctanos</title>
+    <link rel="stylesheet" href="{% static 'mainapp/css/style.css' %}">
+    <style>
+        .cta-section {
+            background-color: #f0f0f0;
+            padding: 6rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        .cta-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .cta-title {
+            font-size: 2.2rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+        .cta-subtitle {
+            font-size: 1.5rem;
+            color: #555;
+            margin-bottom: 2.5rem;
+        }
+        .btn-comienza {
+            display: inline-block;
+            padding: 1.2rem 2.5rem;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .btn-comienza:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+        @media (max-width: 768px) {
+            .cta-title {
+                font-size: 1.8rem;
+            }
+            .cta-subtitle {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="{% static 'mainapp/images/logo.png' %}" alt="Logo de la empresa">
+        </div>
+        <nav>
+            <a href="{% url 'mainapp:inicio' %}">Inicio</a>
+            <a href="{% url 'mainapp:nosotros' %}">Nosotros</a>
+            <a href="{% url 'mainapp:servicios' %}">Servicios</a>
+            <a href="{% url 'mainapp:equipo' %}">Equipo</a>
+            <a href="{% url 'mainapp:contactanos' %}">Contáctanos</a>
+            <a href="{% url 'mainapp:contactanos_2' %}">Contáctanos_2</a>
+            <a href="{% url 'mainapp:enlaces' %}">Enlaces</a>
+        </nav>
+    </header>
+    <div class="container">
+        <main>
+            <h1>Contáctanos</h1>
+            <section>
+                <p>Puedes contactarnos a través de los siguientes medios:</p>
+                <ul>
+                    <li>📧 Correo: info@ejemplo.com</li>
+                    <li>📞 Teléfono: (123) 456-7890</li>
+                    <li>📍 Dirección: Calle Principal 123</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Horario de Atención</h2>
+                <p>Lunes a Viernes: 9:00 AM - 6:00 PM</p>
+                <p>Sábados: 9:00 AM - 1:00 PM</p>
+            </section>
+        </main>
+    </div>
+
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2 class="cta-title">Tu compañía está a un paso de convertir la serenidad estratégica en la base de su crecimiento rentable a largo plazo.</h2>
+            <p class="cta-subtitle">Déjanos contarte nuestro método</p>
+            <a href="{% url 'mainapp:contactanos' %}" class="btn-comienza">Comienza ahora</a>
+        </div>
+    </section>
+</body>
+</html> 
